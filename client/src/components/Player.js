@@ -4,8 +4,8 @@ const Player = props => {
   return (
     <div className="player" data-testid="player">
       <h2>{props.name}</h2>
-      <h3>Country: {props.country}</h3>
-      <h3>Searches: {props.searches}</h3>
+      <h3>{props.country}</h3>
+      <h4>Google Searches: {props.searches}</h4>
     </div>
   );
 };

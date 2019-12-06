@@ -22,6 +22,10 @@ h3 {
   font-size: 15px;
 }
 
+h4 {
+  font-size: 10px;
+}
+
 .player {
   border: 2px black solid;
   text-align: center;
