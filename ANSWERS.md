@@ -1,4 +1,4 @@
-- [] Why would you use class component over function components (removing hooks from the question)?
+- [ ] Why would you use class component over function components (removing hooks from the question)?
 
     Using class components allows you to hold state or data. Functional components are able to be used if there is no state or data to hold.
 
@@ -14,8 +14,6 @@
 
     A custom hook allows us to have a reusable piece of stateful code that will not affect data or make unwanted changes to data.
 
-
 - [ ] Why is it important to test our apps?
 
     So that we can minimize bugs and encourage us to write better and more testable code.
-

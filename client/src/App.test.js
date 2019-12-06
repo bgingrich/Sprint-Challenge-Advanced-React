@@ -1,23 +1,25 @@
 import React from "react";
-import { render} from "@testing-library/react";
+import ReactDOM from 'react-dom';
+import * as rtl from "@testing-library/react";
 import App from "./App";
 import "@testing-library/jest-dom/extend-expect";
 
-test("Renders without crashing", () => {
-  render(<App />);
+afterEach(rtl.cleanup);
+
+it('Renders without crashing', () => {
+    const div = document.createElement('div');
+    ReactDOM.render(<App />, div);
+    ReactDOM.unmountComponentAtNode(div);
+})
+
+test('Render Toggle', () => {
+    const wrapper = rtl.render(<App />)
+    const element = wrapper.getByTestId("toggle")
+    expect(element).toBeInTheDocument()
 });
 
-test("Displays player list", () => {
-  const {getByTestId} = render(<App />);
-  getByTestId("playerList");
-});
-
-test("Displays toggle function", () => {
-  const {getByTestId} = render(<App />);
-  getByTestId("toggle");
-});
-
-test("Displays NavBar", () => {
-  const {getByTestId} = render(<App />);
-  getByTestId("navbar");
+test('Render NavBar', () => {
+  const wrapper = rtl.render(<App />)
+  const element = wrapper.getByTestId("navbar")
+  expect(element).toBeInTheDocument()
 });
